@@ -7,9 +7,9 @@ pipeline {
                                 echo "hello venkat"
                                 echo "hi"
                         
-                                      sh ...
-                                              bash /var/lib/jenkins/workspace/job1/task1.sh
-                                ...
+                                      
+                                            sh '  bash /var/lib/jenkins/workspace/job1/task1.sh '
+                                
                                         
                         }
                 }
