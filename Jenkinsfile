@@ -24,8 +24,7 @@ sh 'free -h'
 
 sh 'du -h'
 
-
-sh 'echo cpu=lscpu'
+sh 'echo `cpu=lscpu`'
 
 
                                 }
