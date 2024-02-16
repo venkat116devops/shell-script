@@ -7,7 +7,7 @@ pipeline {
                                 echo "hello venkat"
                                 echo "hi"
                         
-                                      sh "bash task.sh"
+                                      sh " bash ${WORKSPACE}/task.sh"
                                         
                         }
                 }
