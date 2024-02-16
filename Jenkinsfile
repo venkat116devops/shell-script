@@ -8,7 +8,7 @@ pipeline {
                                 echo "hi"
                         
                                       
-                                            sh '  bash /var/lib/jenkins/workspace/job1/task1.sh '
+                                            sh '  bash ${WORKSPACE}/job1/task1.sh '
                                 
                                         
                         }
