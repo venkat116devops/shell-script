@@ -9,7 +9,7 @@ pipeline{
                                 }
                         stage("stage2"){
                                 steps{
-                                        echo "hello stage2"
+                                        echo "hello stage2 $username"
                                                         }
                                         }
                 stage("print master details"){
