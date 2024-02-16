@@ -5,6 +5,7 @@ pipeline {
                         steps {
                                 echo "hello blue ocen"
                                 echo "hello venkat"
+                                echo "hi"
                         }
                 }
         }
