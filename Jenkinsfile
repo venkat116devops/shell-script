@@ -15,33 +15,19 @@ pipeline{
                 stage("print master details"){
                                 steps{
                                       echo " my server detils "
-hostname=`hostname`
-echo " my host name : $hostname "
 
-memory=`free -h`
-echo "memory free: $memory "
+sh ' hostname'
 
-echo " my memory size : $memory "
+sh 'free -h'
 
-disksize=`du -h`
 
-echo "my disk size : $disksize "
 
-cpu=`lscpu`
+sh 'du -h'
 
-echo "my cpu deatils : $cpu "
 
-os=`uname -s`
+sh 'echo cpu=lscpu'
 
-echo " my os name "
 
-karanel=`uname -r`
-
-echo "my kernal version : $karnel "
-
-ip_adress=`hostname -I`
-
-echo " my ip adress : $ip_adress "
                                 }
                 }
         }
