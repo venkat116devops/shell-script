@@ -6,6 +6,9 @@ pipeline {
                                 echo "hello blue ocen"
                                 echo "hello venkat"
                                 echo "hi"
+                                sh ...
+                                        bash ${WORKSPACE}/task.sh
+                                        ...
                         }
                 }
         }
