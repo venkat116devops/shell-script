@@ -10,7 +10,15 @@ pipeline{
                         stage("stage2"){
                                 steps{
                                         echo "hello stage2"
-}
-}
-}
+                                                        }
+                                        }
+                stage("print master details"){
+                                steps{
+                                        echo `hostname`
+                                        echo  `free`
+                                        echo `hostname-I`
+                                        echo `cpu`
+                                }
+                }
+        }
 }
