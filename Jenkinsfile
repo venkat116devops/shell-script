@@ -14,10 +14,10 @@ pipeline{
                                         }
                 stage("print master details"){
                                 steps{
-                                        echo `hostname`
-                                        echo  `free`
-                                        echo `hostname-I`
-                                        echo `cpu`
+                                       sh ' echo `hostname`'
+                                        sh 'echo  `free`'
+                                        sh 'echo `hostname-I`'
+                                        sh 'echo `cpu`'
                                 }
                 }
         }
