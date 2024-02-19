@@ -36,10 +36,12 @@ jobs:
           echo test, and deploy your project.
   deploy_job:
     runs-on: knr
+    needs: [ build_step1 ]
     steps: 
       - name: deploy step
         run: |
                 echo "listing woekspace files"
                 ls ${{ github.workspace }}
+                bash ${{ github.workspace }}/task1.sh
 
 
