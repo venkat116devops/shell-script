@@ -1,0 +1,54 @@
+provider "aws" {
+ 
+ access_key= "AKIA4MTWG7GUB5XHXS54"
+ secret_key="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"
+ region= "us-east-1"
+
+}
+
+resource "aws_instance" "demo"{
+  ami= "ami-07d9b9ddc6cd8dd30"
+  instance_type= "t2.micro"
+  vpc_security_group_ids= [aws_security_group.main.id]
+   tags= {
+  Name= "demo"
+}
+}
+
+resource "aws_security_group" "main" {
+   name   = "resource_without_dynamic_block"
+# Out bound rules give all permissions
+         egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+   ingress {
+      description = "ingress_rule_1"
+      from_port   = 443
+      to_port     = 443
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+   }
+   
+   ingress {
+      description = "ingress_rule_2"
+      from_port   = 80
+      to_port     = 80
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+   }
+ingress {
+      description = "ingress_rule_2"
+      from_port   = 8080
+      to_port     = 8080
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+   }
+
+
+   tags = {
+      Name = "AWS security group non-dynamic block"
+   }
+}
